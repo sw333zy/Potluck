@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <a href="/add">Add a dish</a>
+    <div th:each="dish : ${dishes}">
+        <div th:if="${dish.dishpic}">
+            <img th:src="${dish.dishpic}"/>
+            <hr/>
+        </div>
+    <h3 th:text="${dish.dishname}"></h3>
+        <h4 th:text="${dish.yourname}"></h4>
+        <td>
+            <a th:href="@{/update/{id}(id=${dish.id})}">Update</a> -
+            <a th:href="@{/detail/{id}(id=${dish.id})}">Details</a> -
+            <a th:href="@{/delete/{id}(id=${dish.id})}">Delete</a>
+        </td>
+    </div>
+
+
+
+
+</body>
+</html>
