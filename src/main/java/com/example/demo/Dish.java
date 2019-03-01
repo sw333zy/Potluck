@@ -18,6 +18,9 @@ public class Dish {
 
     private String dishpic;
 
+    public Dish() {
+    }
+
     public long getId() {
         return id;
     }
